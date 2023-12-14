@@ -94,7 +94,8 @@ button:hover {
 #keyboard-state,
 #clock,
 #cpu,
-#memory {
+#memory,
+#language {
     padding: 0 10px;
     margin: 6px 3px;
     color: #333333;
