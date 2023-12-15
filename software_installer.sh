@@ -1,9 +1,9 @@
 #!/bin/bash
 
-git init
-cat > .gitignore << EOF
-*
-EOF
+#git init
+#cat > .gitignore << EOF
+#*
+#EOF
 
 pacman -S emacs exa wofi zsh ttf-iosevka-nerd --noconfirm
 
