@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git init
-cat > readme.txt << EOF
+cat > .gitignore << EOF
 *
 EOF
 
