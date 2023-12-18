@@ -10,3 +10,5 @@ stow -d dotfiles/ .dotfiles -t $HOME
 chsh -s $(which zsh) $USER
 
 mv dotfiles/wallpapers ~
+
+reboot
