@@ -1,13 +1,10 @@
-#!/bin/bash
-
-#git init
-#cat > .gitignore << EOF
-#*
-#EOF
+ #!/bin/bash
 
 pacman -S emacs exa wofi zsh ttf-iosevka-nerd --noconfirm
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
-cp -rT dotfiles/ ~
-rm software_installer.sh
+
+cd ~/dotfiles/.dotfiles
+stow .
+cd ~
