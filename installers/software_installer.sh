@@ -15,7 +15,7 @@ chsh -s $(which zsh) $USER
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerlevel10k
 
-stow -d dotfiles/ .dotfiles -t $HOME
+stow -Svt ~ *
 
 mv dotfiles/wallpapers ~
 reboot
