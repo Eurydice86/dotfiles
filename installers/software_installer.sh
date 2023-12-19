@@ -10,6 +10,8 @@ paru
 
 sudo pacman -S wofi exa zsh stow ttf-iosevka-nerd emacs --noconfirm
 
+paru -S sddm-sugar-dark
+
 chsh -s $(which zsh) $USER
 
 cd ~
