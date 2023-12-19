@@ -8,7 +8,7 @@ cd paru
 makepkg -si
 paru
 
-cd ~
+cd ~/dotfiles
 sudo pacman -S wofi exa zsh stow ttf-iosevka-nerd emacs --noconfirm
 
 chsh -s $(which zsh) $USER
