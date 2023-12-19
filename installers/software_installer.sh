@@ -27,6 +27,6 @@ stow -Svt ~ foot
 stow -Svt ~ zsh
 stow -Svt ~ wallpapers
 
-stow -Svt / sddm
+sudo stow -Svt / sddm
 
 reboot
