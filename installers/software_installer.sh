@@ -20,5 +20,4 @@ cd dotfiles
 
 stow -Svt ~ *
 
-mv wallpapers ~
 reboot
