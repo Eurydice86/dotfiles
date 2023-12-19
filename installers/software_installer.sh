@@ -20,7 +20,13 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $HOME/powerleve
 
 cd dotfiles
 
-stow -Svt ~ *
+stow -Svt ~ sway
+stow -Svt ~ wofi
+stow -Svt ~ waybar
+stow -Svt ~ foot
+stow -Svt ~ zsh
+stow -Svt ~ wallpapers
+
 stow -Svt / sddm
 
 reboot
