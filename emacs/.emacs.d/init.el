@@ -48,7 +48,8 @@
 
 (use-package spacious-padding
   :ensure t
-(setq spacious-padding-widths
+  :config
+  (setq spacious-padding-widths
       '( :internal-border-width 15
          :header-line-width 4
          :mode-line-width 6
@@ -59,7 +60,7 @@
 
 (set-face-attribute 'default nil :height 120)
 (set-frame-font "Iosevka Nerd Font" nil t)
-(use-package ef-fonts
+(use-package ef-themes
   :ensure t)
 (load-theme 'ef-maris-dark)
 
@@ -79,10 +80,10 @@
   :ensure t
   :config
   (vertico-mode 1))
-(use-package sml-modeline
-  :ensure t
-  :config
-  (sml-modeline-mode 1))
+;(use-package sml-modeline
+;  :ensure t
+;  :config
+;  (sml-modeline-mode 1))
 
 
 ;;; org-mode
@@ -99,7 +100,7 @@
 ;;; elisp
 
 (use-package emacs-lisp-mode
-  :ensure t
+;  :ensure t
   :hook ((emacs-lisp-mode . company-mode)))
 
 ;;; Python
@@ -112,13 +113,6 @@
 	      ("<f5>" . compile)
 	      ("<f6>" . eglot-format))
   :mode (("\\.py\\'" . python-ts-mode)))
-
-(use-package highlight-indent-guides
-  :ensure t
-  :hook (python-ts-mode . highlight-indent-guides-mode)
-  :config
-  (set-face-foreground 'highlight-indent-guides-character-face "dimgray")
-  (setq highlight-indent-guides-method 'character))
 
 ;;; Rust
 
@@ -143,7 +137,7 @@
 ;;(add-hook 'eglot-ensure 'c++-ts-mode)
 
 (use-package lsp-mode
-  :ensure t
+  ;:ensure t
   :hook ((c++-ts-mode . eglot-ensure)
 	 ( c++-ts-mode . company-mode))
   :mode (("\\.cpp\\'". c++-ts-mode)))
