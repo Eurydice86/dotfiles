@@ -27,6 +27,7 @@ stow -Svt ~ waybar
 stow -Svt ~ foot
 stow -Svt ~ zsh
 stow -Svt ~ wallpapers
+stow -Svt ~ emacs
 
 sudo stow -Svt / sddm
 
