@@ -42,7 +42,6 @@
 (add-hook 'text-mode-hook 'visual-line-mode)
 
 
-;(golden-ratio-mode)
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
@@ -70,21 +69,11 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 
-(global-set-key (kbd "C-z") 'vterm-other-window)
-
-;(drag-stuff-mode t)
-;(drag-stuff-global-mode 1)
-;(drag-stuff-define-keys)
 
 (use-package vertico
   :ensure t
   :config
   (vertico-mode 1))
-;(use-package sml-modeline
-;  :ensure t
-;  :config
-;  (sml-modeline-mode 1))
-
 
 ;;; org-mode
 
