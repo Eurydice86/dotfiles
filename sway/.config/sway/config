@@ -14,6 +14,10 @@ default_border pixel 2
 output DP-2 pos 0 415 res 1920x1080@144.001Hz
 output DP-3 pos 1920 0 res 1920x1080
 
+input type:keyboard {
+    xkb_layout us,gr,fi
+    xkb_options grp:win_space_toggle
+}
 
 set $opacity 0.9
 for_window [class=".*"] opacity $opacity
