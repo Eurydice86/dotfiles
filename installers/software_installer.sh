@@ -8,7 +8,7 @@ cd paru
 makepkg -si
 paru
 
-sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd emacs --noconfirm
+sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd emacs python-lsp-server --noconfirm
 
 paru -S sddm-sugar-dark
 
