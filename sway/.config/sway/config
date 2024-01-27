@@ -11,6 +11,10 @@ gaps outer 20px
 
 default_border pixel 2
 
+output DP-2 pos 0 415 res 1920x1080@144.001Hz
+output DP-3 pos 1920 0 res 1920x1080
+
+
 set $opacity 0.9
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
@@ -32,6 +36,8 @@ set $term foot
 # on the original workspace that the command was run on.
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show run
+
+exec_always pulseaudio --start
 
 ### Output configuration
 #
@@ -78,6 +84,7 @@ output Virtual-1 resolution 1920x1080 position 1920,0
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    bindsym Ctrl+Alt+e exec emacs
 
     # Kill focused window
     bindsym $mod+Shift+q kill

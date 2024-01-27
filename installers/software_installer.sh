@@ -11,7 +11,6 @@ paru
 sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd emacs --noconfirm
 
 paru -S sddm-sugar-dark
-paru -S wdisplays
 
 chsh -s $(which zsh) $USER
 
