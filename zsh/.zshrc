@@ -13,3 +13,14 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
+
+autoload -U compinit promptinit
+
+promptinit
+prompt pure
+
+compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
