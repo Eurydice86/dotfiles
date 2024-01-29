@@ -87,7 +87,12 @@ output Virtual-1 resolution 1920x1080 position 1920,0
 #
     # Start a terminal
     bindsym $mod+Return exec $term
+    # Start emacs
     bindsym Ctrl+Alt+e exec emacs
+    # Volume control
+    bindsym XF86AudioRaiseVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 +5%"
+    bindsym XF86AudioLowerVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 -5%"
+    bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
     # Kill focused window
     bindsym $mod+Shift+q kill
