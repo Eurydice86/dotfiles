@@ -41,8 +41,6 @@ set $term foot
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show run
 
-exec_always pulseaudio -k
-exec_always pulseaudio --start
 
 ### Output configuration
 #

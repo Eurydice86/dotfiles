@@ -8,7 +8,7 @@ cd paru
 makepkg -si
 paru
 
-sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd emacs python-lsp-server rust-analyzer --noconfirm
+sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd pulseaudio emacs python-lsp-server rust-analyzer --noconfirm
 
 paru -S sddm-sugar-dark
 
