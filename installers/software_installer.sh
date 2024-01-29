@@ -10,7 +10,7 @@ paru
 
 sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd otf-font-awesome pulseaudio emacs python-lsp-server rust-analyzer --noconfirm
 
-paru -S sddm-sugar-dark
+paru -S sddm-sugar-candy
 
 chsh -s $(which zsh) $USER
 
