@@ -47,7 +47,7 @@
     },
      "custom/power": {
      "format":"",
-     "on-click": "waylogout --hide-cancel --screenshots --font='Iosevka Nerd Font' --fa-font='Font Awesome 6 Free' --effect-blur=7x5 --indicator-thickness=20 --ring-color=888888aa --inside-color=88888866 --text-color=eaeaeaaa --line-color=00000000 --ring-selection-color=bbff00aa --inside-selection-color=99dd00aa --text-selection-color=eaeaeaaa --line-selection-color=00000000 --lock-command='echo lock' --logout-command='echo logout' --suspend-command='echo suspend' --hibernate-command='echo hibernate' --poweroff-command='echo poweroff' --reboot-command='echo reboot' --switch-user-command='echo switch' --selection-label"
+     "on-click": "waylogout --hide-cancel --screenshots --font='Iosevka Nerd Font' --fa-font='Font Awesome 6 Free' --effect-blur=7x5 --indicator-thickness=20 --ring-color=888888aa --inside-color=88888866 --text-color=eaeaeaaa --line-color=00000000 --ring-selection-color=bbff00aa --inside-selection-color=99dd00aa --text-selection-color=eaeaeaaa --line-selection-color=00000000 --poweroff-command='poweroff' --reboot-command='reboot' --selection-label"
      },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
