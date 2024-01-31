@@ -10,6 +10,11 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file t)
 
+(golden-ratio-mode t)
+
+(defadvice split-window (after split-window-after activate)
+  (other-window 1))
+
 ;;; Require melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
