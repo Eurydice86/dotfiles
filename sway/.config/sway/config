@@ -38,7 +38,6 @@ set $term foot
 # set $menu dmenu_path | dmenu | xargs swaymsg exec --
 set $menu wofi --show drun
 
-
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -88,6 +87,8 @@ output DP-3 pos 1920 0 res 1920x1080
     bindsym $mod+Return exec $term
     # Start emacs
     bindsym Ctrl+Alt+e exec emacs
+    # Screen snip
+    bindsym Ctrl+Alt+p exec slurp | grim -g - - | wl-copy
     # Volume control
     bindsym XF86AudioRaiseVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 +5%"
     bindsym XF86AudioLowerVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 -5%"
