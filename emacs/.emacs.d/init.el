@@ -18,6 +18,10 @@
 ;;; Require melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+(use-package vterm)
+(global-set-key (kbd "C-z") 'vterm-other-window)
 
 (use-package dashboard
   :ensure t
@@ -72,6 +76,7 @@
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 
 (use-package vertico

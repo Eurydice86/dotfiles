@@ -8,7 +8,7 @@ cd paru
 makepkg -si
 paru
 
-sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd otf-font-awesome pulseaudio emacs python-lsp-server python-lsp-black python-isort rust-analyzer wl-clipboard --noconfirm
+sudo pacman -S wofi eza zsh firefox stow ttf-iosevka-nerd otf-font-awesome pulseaudio emacs python-lsp-server python-lsp-black python-isort rust-analyzer cmake wl-clipboard --noconfirm
 
 paru -S sddm-sugar-candy
 
