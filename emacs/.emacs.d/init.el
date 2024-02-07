@@ -10,18 +10,37 @@
 (setq custom-file "~/.emacs.d/emacs-custom.el")
 (load custom-file t)
 
-(golden-ratio-mode t)
-
-(defadvice split-window (after split-window-after activate)
-  (other-window 1))
-
 ;;; Require melpa
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-(use-package vterm)
-(global-set-key (kbd "C-z") 'vterm-other-window)
+(use-package golden-ratio
+  :ensure t
+  :config
+  (golden-ratio-mode t))
+
+(defadvice split-window (after split-window-after activate)
+  (other-window 1))
+
+(use-package beacon
+  :ensure t
+  :config
+  (beacon-mode 1))
+
+;;; 
+
+(use-package projectile
+  :ensure t
+  :config
+  (setq projectile-project-search-path '("~/projects/"))
+  (projectile-mode 1))
+
+(use-package company
+  :ensure t
+  :config
+  (setq company-idle-delay 0.0
+        company-minimum-prefix-length 1))
 
 (use-package dashboard
   :ensure t
@@ -49,7 +68,6 @@
 (setq initial-major-mode 'org-mode) ;; set startup mode to org-mode
 (add-hook 'text-mode-hook 'visual-line-mode)
 
-
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
 
@@ -62,8 +80,8 @@
          :mode-line-width 6
          :tab-width 4
          :right-divider-width 30
-         :scroll-bar-width 8)))
-(spacious-padding-mode 1)
+         :scroll-bar-width 8))
+  (spacious-padding-mode 1))
 
 (set-face-attribute 'default nil :height 120)
 (set-frame-font "Iosevka Nerd Font" nil t)
@@ -77,7 +95,6 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
 
 (use-package vertico
   :ensure t
@@ -139,19 +156,6 @@
   :hook ((c++-ts-mode . eglot-ensure)
 	 ( c++-ts-mode . company-mode))
   :mode (("\\.cpp\\'". c++-ts-mode)))
-
-;;; 
-(use-package company
-  :ensure t
-  :config
-  (setq company-idle-delay 0.0
-        company-minimum-prefix-length 1))
-
-(use-package projectile
-  :ensure t
-  :config
-  (setq projectile-project-search-path '("~/projects/"))
-  (projectile-mode 1))
 
 ;;; csv
 

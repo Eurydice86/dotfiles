@@ -7,7 +7,7 @@
 font pango: IosevkaNerdFont Medium 12
 
 gaps inner 20px
-gaps outer 20px
+gaps outer 10px
 
 default_border pixel 2
 
@@ -115,7 +115,7 @@ output DP-3 pos 1920 0 res 1920x1080
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
-#
+  
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
