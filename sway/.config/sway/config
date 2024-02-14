@@ -22,6 +22,12 @@ set $opacity 0.9
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
+
+assign [app_id="firefox"] workspace number 2
+assign [app_id="foot"] workspace number 1
+assign [app_id="emacs"] workspace number 1
+
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
