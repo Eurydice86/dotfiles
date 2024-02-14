@@ -3,6 +3,11 @@
 sudo pacman -Suy --noconfirm
 
 sudo pacman -S --needed base-devel git --noconfirm
+
+git config --global init.defaultBranch main
+git config --global user.name Eurydice86
+git config --global user.email kyriakopoulos.nikos@gmail.com
+
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si

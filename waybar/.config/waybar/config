@@ -10,22 +10,22 @@
     //"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray", "custom/power"],
     "modules-right": ["pulseaudio", "cpu", "memory", "disk", "temperature", "sway/language", "clock", "tray", "custom/power"],
     // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
+     "sway/workspaces": {
+         "disable-scroll": true,
+         //"all-outputs": true,
+         "warp-on-scroll": false,
+         "format": "{icon}",
+         "format-icons": {
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "",
+             "5": "",
+             //"urgent": "",
+             //"focused": "",
+             //"default": ""
+         }
+     },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,

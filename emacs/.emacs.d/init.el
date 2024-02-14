@@ -69,7 +69,7 @@
 (add-hook 'text-mode-hook 'visual-line-mode)
 
 (global-display-line-numbers-mode)
-(setq display-line-numbers-type 'relative)
+;(setq display-line-numbers-type 'relative)
 
 (use-package spacious-padding
   :ensure t
