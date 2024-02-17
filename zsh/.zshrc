@@ -24,3 +24,5 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
+
+eval "$(zoxide init zsh)"

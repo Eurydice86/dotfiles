@@ -12,18 +12,20 @@
     // Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
-         //"all-outputs": true,
+         // "all-outputs": true,
          "warp-on-scroll": false,
          "format": "{icon}",
          "format-icons": {
-             "1": "",
-             "2": "",
-             "3": "",
-             "4": "",
-             "5": "",
-             //"urgent": "",
-             //"focused": "",
-             //"default": ""
+             "1": "",
+             "2": "",
+             "3": "",
+             "4": "󰲦",
+             "5": "󰲨",
+             "6": "󰲪",
+             "7": "󰲬",
+             "8": "󰲮",
+	     "9": "󰲰",
+	     "10": "󰿬"
          }
      },
     "keyboard-state": {
@@ -46,7 +48,7 @@
         "tooltip-format": "{app}: {title}"
     },
      "custom/power": {
-     "format":"",
+     "format":"⏻",
      "on-click": "waylogout --hide-cancel --screenshots --font='Iosevka Nerd Font' --fa-font='Font Awesome 6 Free' --effect-blur=7x5 --indicator-thickness=20 --ring-color=888888aa --inside-color=88888866 --text-color=eaeaeaaa --line-color=00000000 --ring-selection-color=bbff00aa --inside-selection-color=99dd00aa --text-selection-color=eaeaeaaa --line-selection-color=00000000 --logout-command='sway exit' --poweroff-command='poweroff' --reboot-command='reboot' --selection-label"
      },
     "mpd": {

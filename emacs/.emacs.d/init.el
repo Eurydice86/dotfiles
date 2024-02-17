@@ -71,6 +71,9 @@
 (global-display-line-numbers-mode)
 ;(setq display-line-numbers-type 'relative)
 
+(use-package denote
+  :ensure t)
+
 (use-package spacious-padding
   :ensure t
   :config

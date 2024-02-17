@@ -23,9 +23,9 @@ for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
 
-assign [app_id="firefox"] workspace number 2
-assign [app_id="foot"] workspace number 1
 assign [app_id="emacs"] workspace number 1
+assign [app_id="foot"] workspace number 2
+assign [app_id="firefox"] workspace number 3
 
 
 ### Variables
@@ -93,7 +93,7 @@ output DP-3 pos 1920 0 res 1920x1080
     # Start a terminal
     bindsym $mod+Return exec $term
     # Start emacs
-    bindsym Ctrl+Alt+e exec emacs
+    bindsym $mod+e exec emacs
     # Screen snip
     bindsym Ctrl+Alt+p exec slurp | grim -g - - | wl-copy
     # Volume control
