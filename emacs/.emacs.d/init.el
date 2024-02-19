@@ -104,6 +104,16 @@
   :config
   (vertico-mode 1))
 
+(use-package marginalia
+  :ensure t
+  :config
+  (marginalia-mode 1))
+
+(use-package orderless
+  :ensure t
+  :custom
+  (completion-styles '(orderless basic)))
+
 ;;; org-mode
 
 (use-package org-appear
