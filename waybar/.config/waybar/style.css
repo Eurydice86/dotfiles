@@ -2,7 +2,7 @@
     border: none;
     border-radius: 50px;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: IosevkaNerdFont, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: IosevkaNerdFont, "Font Awesome 5 Free";
     font-size: 14px;
 }
 
