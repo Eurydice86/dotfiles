@@ -92,8 +92,8 @@ output DP-3 pos 1920 0 res 1920x1080
     # Screen snip
     bindsym Ctrl+Alt+p exec slurp | grim -g - - | wl-copy
     # Volume control
-    bindsym XF86AudioRaiseVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 +1%"
-    bindsym XF86AudioLowerVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 -1%"
+    bindsym XF86AudioRaiseVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 +2%"
+    bindsym XF86AudioLowerVolume exec sh -c "set-sink-mute 0 false; pactl set-sink-volume 0 -2%"
     bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 
     # Kill focused window
