@@ -20,6 +20,9 @@
   :config
   (golden-ratio-mode t))
 
+(use-package f
+  :ensure t)
+
 (defadvice split-window (after split-window-after activate)
   (other-window 1))
 
@@ -142,6 +145,17 @@
 	      ("<f6>" . eglot-format))
   :mode (("\\.py\\'" . python-ts-mode)))
 
+(cl-defun pyvenv-autoload ()
+  "auto activate venv directory if exists"
+  (f-traverse-upwards (lambda (path)
+                        (let ((venv-path (f-expand ".venv" path)))
+                          (when (f-exists? venv-path)
+                            (pyvenv-activate venv-path)
+                            (cl-return-from pyvenv-autoload))))))
+
+(add-hook 'python-ts-mode-hook 'pyvenv-autoload)
+
+
 ;;; Rust
 
 (use-package rust-ts-mode
@@ -189,3 +203,7 @@
 
 (add-hook 'csv-mode-hook 'csv-highlight)
 (add-hook 'csv-mode-hook 'csv-align-mode)
+
+
+;(add-hook 'sql-mode-hook 'lsp)
+;(setq lsp-sqls-workspace-config-path nil)
