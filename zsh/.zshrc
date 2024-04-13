@@ -26,3 +26,4 @@ bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
 
 eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
