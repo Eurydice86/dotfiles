@@ -37,13 +37,15 @@
   :ensure t
   :config
   (setq projectile-project-search-path '("~/projects/"))
-  (projectile-mode 1))
+  (projectile-mode t))
+
 
 (use-package company
   :ensure t
   :config
   (setq company-idle-delay 0.0
         company-minimum-prefix-length 1))
+
 
 (use-package dashboard
   :ensure t
@@ -61,6 +63,7 @@
                         (registers . 5)))
   (setq dashboard-set-navigator t)
   (setq dashboard-set-footer nil)
+  (setq dashboard-projects-backend 'projectile)
   :config
   (dashboard-setup-startup-hook))
 
@@ -169,6 +172,17 @@
   :config
   (add-to-list 'exec-path "/home/nikos/.cargo/bin")
   (setenv "PATH" (concat (getenv "PATH") ":/home/nikos/.cargo/bin")))
+
+
+;;; Godot
+(use-package gdscript-mode
+  :ensure t
+  :hook ((gdscipt-mode . eglot-ensure)
+	 (gdscript-mode . company-mode)
+	 add-to-list 'company-backends 'company-godot-gdscript)
+  :custom (gdscript-eglot)
+  :mode (("\\.gd\\'". gdscript-mode)))
+
 
 ;;; C and C++
 ;; (add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
