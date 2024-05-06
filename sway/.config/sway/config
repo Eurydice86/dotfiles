@@ -18,7 +18,7 @@ input type:keyboard {
     xkb_options grp:win_space_toggle
 }
 
-set $opacity 0.9
+set $opacity 0.8
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
@@ -86,7 +86,7 @@ output DP-3 pos 0 0 res 1920x1080
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+Return exec $term --title Terminal
     # Start emacs
     bindsym $mod+e exec emacs
     # Screen snip
