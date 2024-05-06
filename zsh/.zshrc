@@ -27,3 +27,4 @@ bindkey "^[[3~" delete-char
 
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
+eval "$(thefuck --alias)"
