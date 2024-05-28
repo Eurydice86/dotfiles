@@ -67,9 +67,9 @@
   :config
   (dashboard-setup-startup-hook))
 
-(use-package affe
+(use-package consult
   :ensure t)
-(global-set-key (kbd "C-x f") 'affe-find)
+(global-set-key (kbd "C-x f") 'consult-find)
 
 (setq initial-major-mode 'org-mode) ;; set startup mode to org-mode
 (add-hook 'text-mode-hook 'visual-line-mode)
