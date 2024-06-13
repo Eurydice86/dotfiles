@@ -22,6 +22,10 @@ set $opacity 0.8
 for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
+# execute on startup
+exec paccache -rk1
+exec mount /dev/sda1 /mnt/hdd
+
 
 ### Variables
 #
