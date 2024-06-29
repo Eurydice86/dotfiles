@@ -13,7 +13,7 @@ cd paru
 makepkg -si
 paru
 
-sudo pacman -S wofi eza zsh atuin firefox btop stow ttf-iosevka-nerd noto-fonts-emoji pulseaudio emacs python-lsp-server python-lsp-black python-isort rust-analyzer cmake wl-clipboard thefuck --noconfirm
+sudo pacman -S wofi eza zsh atuin firefox btop stow ttf-iosevka-nerd noto-fonts-emoji pulseaudio emacs python-lsp-server python-lsp-black python-isort rust-analyzer cmake wl-clipboard clang thefuck --noconfirm
 
 paru -S sddm-sugar-candy
 
