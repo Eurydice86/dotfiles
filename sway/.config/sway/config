@@ -48,8 +48,8 @@ set $menu wofi --show drun
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #  output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-  output * bg ~/wallpapers/1331117.png fill
-  
+#  output * bg ~/wallpapers/1331117.png fill
+  output * bg ~/wallpapers/GjrkLhP.jpg fill
 
 set $output-primary DP-3
 set $output-secondary DP-2

@@ -96,7 +96,8 @@
 (set-frame-font "Iosevka Nerd Font" nil t)
 (use-package ef-themes
   :ensure t)
-(load-theme 'ef-maris-dark)
+(load-theme 'ef-elea-dark)
+
 
 ;(set-frame-parameter (selected-frame) 'alpha '(85 50))
 ;(add-to-list 'default-frame-alist '(alpha 85 50))
