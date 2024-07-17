@@ -75,6 +75,7 @@
 (add-hook 'text-mode-hook 'visual-line-mode)
 
 (global-display-line-numbers-mode)
+(global-tab-line-mode)
 ;(setq display-line-numbers-type 'relative)
 
 (use-package denote
