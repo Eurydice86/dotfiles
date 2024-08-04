@@ -5,7 +5,9 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("159a29ab0ec5ba4e2811eddd9756aa779b23467723dcbdd223929fbf2dde8954" default))
- '(inhibit-startup-screen t))
+ '(inhibit-startup-screen t)
+ '(package-selected-packages
+   '(pyvenv venv python-ts-mode vertico spacious-padding projectile org-modern org-gcal org-appear orderless marginalia golden-ratio gdscript-mode f ef-themes denote dashboard consult company beacon)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

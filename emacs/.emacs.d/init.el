@@ -1,7 +1,9 @@
+
 (setq org-html-link-org-files-as-html nil)
 
 (custom-set-variables
  '(inhibit-startup-screen t))
+
 
 (setq backup-directory-alist
       `(("." . "~/.emacs.d/backups")))
@@ -29,7 +31,11 @@
 (use-package beacon
   :ensure t
   :config
-  (beacon-mode 1))
+  (beacon-mode t))
+
+
+(keymap-global-set "<f5>" 'compile)
+(keymap-global-set "<f6>" 'eglot-format)
 
 ;;; 
 
@@ -47,6 +53,9 @@
         company-minimum-prefix-length 1))
 
 
+(setq plstore-cache-passphrase-for-symmetric-encryption t)
+
+
 (use-package dashboard
   :ensure t
   :init
@@ -56,11 +65,14 @@
   (setq dashboard-set-heading-icons t)
   (setq dashboard-set-file-icons t)
   (setq dashboard-icon-type 'all-the-icons) ;; use `nerd-icons' package
+					;(setq dashboard-week-agenda t)
+					;(setq dashboard-agenda-sort-strategy '(time-up ts-up))
   (setq dashboard-items '((recents  . 5)
-                        (bookmarks . 5)
+					;(bookmarks . 5)
                         (projects . 5)
-                        (agenda . 5)
-                        (registers . 5)))
+					;(agenda . 15)
+					;(registers . 5)
+			))
   (setq dashboard-set-navigator t)
   (setq dashboard-set-footer nil)
   (setq dashboard-projects-backend 'projectile)
@@ -91,13 +103,14 @@
          :tab-width 4
          :right-divider-width 30
          :scroll-bar-width 8))
-  (spacious-padding-mode 1))
+  (spacious-padding-mode t))
 
 (set-face-attribute 'default nil :height 120)
 (set-frame-font "Iosevka Nerd Font" nil t)
 (use-package ef-themes
-  :ensure t)
-(load-theme 'ef-elea-dark)
+  :ensure t
+  :config
+  (load-theme 'ef-elea-dark))
 
 
 ;(set-frame-parameter (selected-frame) 'alpha '(85 50))
@@ -110,12 +123,12 @@
 (use-package vertico
   :ensure t
   :config
-  (vertico-mode 1))
+  (vertico-mode t))
 
 (use-package marginalia
   :ensure t
   :config
-  (marginalia-mode 1))
+  (marginalia-mode t))
 
 (use-package orderless
   :ensure t
@@ -141,15 +154,6 @@
 
 ;;; Python
 
-(use-package python
-  :ensure t
-  :hook ((python-ts-mode . eglot-ensure)
-	 (python-ts-mode . company-mode))
-  :bind (:map python-ts-mode-map
-	      ("<f5>" . compile)
-	      ("<f6>" . eglot-format))
-  :mode (("\\.py\\'" . python-ts-mode)))
-
 (cl-defun pyvenv-autoload ()
   "auto activate venv directory if exists"
   (f-traverse-upwards (lambda (path)
@@ -158,7 +162,15 @@
                             (pyvenv-activate venv-path)
                             (cl-return-from pyvenv-autoload))))))
 
-(add-hook 'python-ts-mode-hook 'pyvenv-autoload)
+
+
+(use-package python
+  :ensure t
+  :hook ((python-ts-mode . eglot-ensure)
+	 (python-ts-mode . company-mode)
+	 (python-ts-mode . pyvenv-autoload))
+  :mode (("\\.py\\'" . python-ts-mode)))
+
 
 
 ;;; Rust
@@ -167,9 +179,6 @@
   :ensure t
   :hook ((rust-ts-mode . eglot-ensure)
 	 (rust-ts-mode . company-mode))
-  :bind (:map rust-ts-mode-map
-	      ("<f5>" . compile)
-	      ("<f6>" . eglot-format))
   :mode (("\\.rs\\'" . rust-ts-mode))
   :config
   (add-to-list 'exec-path "/home/nikos/.cargo/bin")
@@ -219,6 +228,8 @@
 
 (add-hook 'csv-mode-hook 'csv-highlight)
 (add-hook 'csv-mode-hook 'csv-align-mode)
+
+
 
 
 ;(add-hook 'sql-mode-hook 'lsp)
