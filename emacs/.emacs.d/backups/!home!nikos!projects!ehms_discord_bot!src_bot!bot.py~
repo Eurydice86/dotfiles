@@ -1,0 +1,94 @@
+import discord
+from discord.ext.commands import Bot
+from dotenv import load_dotenv
+import os
+
+from src import ehms_calendar
+from src import monthly_presences
+from src import inactive_members
+
+
+def run_bot():
+
+    load_dotenv()
+    inactive_channel_id = int(os.getenv("GENERAL_CHANNEL_ID"))
+    bot_token = os.getenv("BOT_TOKEN")
+
+    intents = discord.Intents.default()
+    intents.message_content = True
+
+    bot = Bot("!", intents=intents)
+
+    @bot.event
+    async def on_ready():
+        inactive_channel = bot.get_channel(inactive_channel_id)
+        await inactive_channel.send("Started...")
+        await bot.close()
+
+    bot.run(token=bot_token)
+
+
+def calendar():
+
+    load_dotenv()
+    upcoming_channel_id = int(os.getenv("UPCOMING_CHANNEL_ID"))
+    bot_token = os.getenv("BOT_TOKEN")
+
+    intents = discord.Intents.default()
+    intents.message_content = True
+
+    bot = Bot("!", intents=intents)
+
+    @bot.event
+    async def on_ready():
+        upcoming_channel = bot.get_channel(upcoming_channel_id)
+        events_message = f"**Upcoming EHMS events**\n{ehms_calendar.get_events()[0]}\n"
+        competitions_message = f"**Upcoming competitions**\n{ehms_calendar.get_competitions()[0]}\n"        
+        await upcoming_channel.send(events_message + competitions_message)
+        await bot.close()
+
+    bot.run(token=bot_token)
+
+
+def presences():
+    load_dotenv()
+    presences_channel_id = int(os.getenv("PRESENCES_CHANNEL_ID"))
+    bot_token = os.getenv("BOT_TOKEN")
+
+    intents = discord.Intents.default()
+    intents.message_content = True
+
+    bot = Bot("!", intents=intents)
+
+    @bot.event
+    async def on_ready():
+        presences_channel = bot.get_channel(presences_channel_id)
+        await presences_channel.send(monthly_presences.monthly_presences())
+        await bot.close()
+
+    bot.run(token=bot_token)
+
+
+def inactive():
+    load_dotenv()
+    inactive_channel_id = int(os.getenv("INACTIVE_CHANNEL_ID"))
+    bot_token = os.getenv("BOT_TOKEN")
+
+    intents = discord.Intents.default()
+    intents.message_content = True
+
+    bot = Bot("!", intents=intents)
+
+    @bot.event
+    async def on_ready():
+        inactive_channel = bot.get_channel(inactive_channel_id)
+        m1, m2 = inactive_members.inactive_members()
+        await inactive_channel.send(m1)
+        await inactive_channel.send(m2)
+        await bot.close()
+
+    bot.run(token=bot_token)
+
+
+if __name__ == "__main__":
+    calendar()

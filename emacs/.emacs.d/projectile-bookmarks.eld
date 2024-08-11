@@ -1,1 +1,1 @@
-("~/projects/ehms_discord_bot/" "~/dotfiles/" "~/projects/polyrhythms/")
+("~/dotfiles/" "~/projects/ehms_discord_bot/" "~/projects/ehms_mc_api/" "~/projects/polyrhythms/")
