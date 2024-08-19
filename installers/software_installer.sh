@@ -33,5 +33,6 @@ stow -Svt ~ emacs
 stow -Svt ~ cava
 
 paru -S cava
+paru -S waylogout-git
 
 reboot
