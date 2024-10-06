@@ -79,6 +79,9 @@
   :config
   (dashboard-setup-startup-hook))
 
+(use-package reformatter
+  :ensure t)
+
 (use-package consult
   :ensure t)
 (global-set-key (kbd "C-x f") 'consult-find)
@@ -208,6 +211,16 @@
   :hook ((c++-ts-mode . eglot-ensure)
 	 ( c++-ts-mode . company-mode))
   :mode (("\\.cpp\\'". c++-ts-mode)))
+
+;;; Go
+
+(use-package go-ts-mode
+  :ensure t
+  :hook ((go-ts-mode . eglot-ensure)
+	 (go-ts-mode . company-mode))
+  :mode "\\.go\\'"
+  )
+
 
 ;;; csv
 

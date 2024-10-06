@@ -1,1 +1,5 @@
+with open("test.txt", "w") as f:
+    f.write("lol\n")
+f.close()
+
 print("test")
