@@ -1,1 +1,1 @@
-("~/dotfiles/" "~/projects/ehms_mc_api/" "~/projects/ehms_discord_bot/" "~/projects/the_scintilla/" "~/projects/file_explorer/" "~/projects/polyrhythms/" "~/projects/aco_billiards/")
+("~/dotfiles/" "~/projects/the_scintilla/" "~/projects/ehms/" "~/projects/ehms_discord_bot/" "~/projects/ehms_mc_api/" "~/projects/aco_billiards/" "~/projects/string_art/" "~/projects/file_explorer/" "~/projects/polyrhythms/")

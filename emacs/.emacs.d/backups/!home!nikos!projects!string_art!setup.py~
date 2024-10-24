@@ -1,0 +1,29 @@
+class Peg:
+    def __init__(self, _n, _x, _y):
+        self.n = _n
+        self.x = _x
+        self.y = _y
+
+width = 4
+height = 3
+
+pegs = []
+for x in range(width):
+    n = len(pegs)
+    p = Peg(n, x, 0)
+    pegs.append(p)
+
+for y in range(1, height):
+    n = len(pegs)
+    p = Peg(n, width - 1, y)
+    pegs.append(p)
+
+for x in range(width - 2, -1, -1):
+    n = len(pegs)
+    p = Peg(n, x, height-1)
+    pegs.append(p)
+
+for y in range(height - 2, 0, -1):
+    n = len(pegs)
+    p = Peg(n, 0, y)
+    pegs.append(p)

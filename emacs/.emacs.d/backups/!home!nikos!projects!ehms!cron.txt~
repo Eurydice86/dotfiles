@@ -1,0 +1,2 @@
+0 0 * * 1 cd /home/PATH_TO/ehms && .venv/bin/python main_db.py
+0 0 1 * * cd /home/PATH_TO/ehms && .venv/bin/python main_bot.py

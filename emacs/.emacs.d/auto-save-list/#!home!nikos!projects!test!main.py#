@@ -49,6 +49,28 @@ def transform(df):
 
     return df
 
+def transform2(df, csv_path):
+    ''' This function accesses the CSV file for exchange rate
+    information, and adds three columns to the data frame, each
+    containing the transformed version of Market Cap column to
+    respective currencies'''
+
+    with open("exchange_rate.csv", "r") as file:
+        conversion_rates = file.readlines()
+        usd_to_eur = float(conversion_rates[1].split(",")[1].strip())
+        usd_to_gbp = float(conversion_rates[2].split(",")[1].strip())
+        usd_to_inr = float(conversion_rates[3].split(",")[1].strip())
+
+        eur = round(df.loc[:, "TotalAssets(USDBillion)"] * usd_to_eur, 2)
+        df.insert(3, "TotalAssets(EURBillion)", eur)
+        gbp = round(df.loc[:, "TotalAssets(USDBillion)"] * usd_to_gbp, 2)
+        df.insert(4, "TotalAssets(GBPBillion)", gbp)
+        inr = round(df.loc[:, "TotalAssets(USDBillion)"] * usd_to_inr, 2)
+        df.insert(5, "TotalAssets(INRBillion)", inr)
+
+        return df
+
+
 def load_to_csv(df):
     df.to_csv("banks.csv", index=False)
         
@@ -60,7 +82,7 @@ if __name__ == "__main__":
     banks_df = extract()
     # log_progress("Data extraction complete. Initiating Transformation process")
 
-    banks_df = transform(banks_df)
+    banks_df = transform2(banks_df, "exchange_rate.csv")
     # log_progress("Data transformation complete. Initiating Loading process")
 
     load_to_csv(banks_df)

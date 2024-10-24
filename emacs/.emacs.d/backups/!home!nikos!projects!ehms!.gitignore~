@@ -1,0 +1,9 @@
+.venv
+__pycache__/
+ehms_discord_bot/.env
+ehms_discord_bot/src/ehms.json
+ehms_discord_bot/src/token.json
+ehms_discord_bot/token.json
+ehms_mc_api/src/headers.py
+ehms_mc_api/src/ehms.db
+ehms_mc_api/data/
