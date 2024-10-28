@@ -1,0 +1,9 @@
+import requests
+
+def scrape():
+    url = "https://akispetretzikis.com/recipe/"
+    
+    
+
+if __name__ == "__main__":
+    scrape()
