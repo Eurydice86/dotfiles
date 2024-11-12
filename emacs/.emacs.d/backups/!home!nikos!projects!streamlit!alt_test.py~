@@ -1,0 +1,9 @@
+import altair as alt
+import pandas as pd
+
+source = pd.read_csv("data/members.csv")
+
+alt.Chart(source).mark_bar().encode(
+    alt.X("gender", bin=True),
+    y='count()',
+)

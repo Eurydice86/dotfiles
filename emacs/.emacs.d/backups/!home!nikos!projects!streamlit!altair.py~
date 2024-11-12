@@ -1,0 +1,5 @@
+import altair as alt
+
+df = pd.read_csv("data/members.csv")
+
+alt.Chart

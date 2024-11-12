@@ -1,0 +1,4 @@
+with open("everybody_codes_e2024_q02_p1.txt", "r") as file:
+    lines = file.readlines()
+
+print(lines)

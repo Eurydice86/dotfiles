@@ -13,7 +13,7 @@ cd paru
 makepkg -si
 paru
 
-sudo pacman -S wofi pacman-contrib waybar eza zsh atuin thunar firefox btop stow ttf-iosevka-nerd noto-fonts-emoji pulseaudio emacs python-lsp-server python-lsp-black python-isort rust-analyzer cmake wl-clipboard clang zoxide vlc thefuck go gopls --noconfirm
+sudo pacman -S wofi pacman-contrib waybar eza zsh atuin thunar btop stow ttf-iosevka-nerd noto-fonts-emoji pulseaudio emacs python-lsp-server python-lsp-black python-isort rust-analyzer cmake wl-clipboard clang zoxide vlc thefuck go gopls --noconfirm
 
 chsh -s $(which zsh) $USER
 
@@ -34,5 +34,6 @@ stow -Svt ~ cava
 
 paru -S cava
 paru -S waylogout-git
+paru -S google-chrome
 
 reboot
