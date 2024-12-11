@@ -1,9 +1,0 @@
-body {
-  background-color: #bfd8d1;
-}
-h1 {
-  color: #2b374b;
-}
-p {
-  color: black;
-}

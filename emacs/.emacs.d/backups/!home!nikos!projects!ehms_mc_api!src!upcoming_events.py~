@@ -1,8 +1,0 @@
-import groups
-import events_in_group
-import event
-
-import datetime
-
-def get_upcoming_tournaments():
-    

@@ -1,2 +1,0 @@
-import sys, os
-sys.path.append("./ehms_mc_api/src/")

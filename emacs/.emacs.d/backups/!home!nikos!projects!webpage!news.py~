@@ -1,3 +1,0 @@
-import json
-
-json = json.loads("https://ehms.squarespace.com/uutiset/?format=json-pretty")
