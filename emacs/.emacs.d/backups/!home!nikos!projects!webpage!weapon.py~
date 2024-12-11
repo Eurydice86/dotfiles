@@ -1,0 +1,7 @@
+def get_weapon_info(weapon):
+    print(weapon)
+
+
+
+if __name__ == "__main__":
+    get_weapon_info("Longsword")

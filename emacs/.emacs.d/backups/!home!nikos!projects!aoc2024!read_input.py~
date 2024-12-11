@@ -1,0 +1,7 @@
+import requests
+
+def read_file(file_name):
+    pass
+
+def read_from_url(url):
+    

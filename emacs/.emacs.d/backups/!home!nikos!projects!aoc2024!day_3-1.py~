@@ -1,0 +1,6 @@
+import read_input
+
+lines = read_input.read_file("dummy.txt")
+
+for l in lines:
+    print(l)

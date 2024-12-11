@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presences</title>
+  <meta http-equiv="refresh" content="5"> <!-- Refresh every 5 seconds -->
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+    h1 { color: #4CAF50; }
+    p { font-size: 1.2em; }
+    .time { color: #007BFF; }
+  </style>
+</head>
+<body>
+  <h1>Welcome, {name}!</h1>
+  <p>The current server time is: <span class="time">{current_time}</span></p>
+  <p>This page refreshes every 5 seconds.</p>
+  <p>Try adding <code>?name=YourName</code> to the URL!</p>
+</body>
+</html>
+

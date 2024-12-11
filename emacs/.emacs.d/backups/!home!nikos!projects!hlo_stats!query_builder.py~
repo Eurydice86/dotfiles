@@ -1,0 +1,41 @@
+def stats(year):
+    query = f"""
+    with hlo24 as (select name, year, country, club_name, nationality
+    from
+    participations p
+    join fighters f on f.fighter_id = p.fighter_id
+    join categories c on p.category_id = c.category_id
+    join clubs cl on cl.club_id = f.club_id
+    where year == '{year}')
+    select year as 'Year', count(distinct name) as 'Unique Participants', count(distinct club_name) as 'Unique Clubs', count(distinct nationality) as 'Unique Nationalities'
+    from hlo24
+    ;
+    """
+    return query
+
+
+def breakdown(year):
+    query = f"""
+    with hlo24 as (select name, year, category_name, country, club_name, nationality
+    from
+    participations p
+    join fighters f on f.fighter_id = p.fighter_id
+    join categories c on p.category_id = c.category_id
+    join clubs cl on cl.club_id = f.club_id
+    where year == '{year}')
+    select category_name as 'Competition', count(distinct name) as 'Participants', count(distinct club_name) as 'Clubs', count(distinct nationality) as 'Nationalities'
+    from hlo24
+    group by category_name
+    ;"""
+
+    return query
+
+
+if __name__ == "__main__":
+    query = f".mode table\n"
+    for year in range(2014, 2020):
+
+        query += stats(year) + "\n"
+        query += breakdown(year) + "\n"
+        with open("blah.sql", "w") as file:
+            file.write(query)

@@ -1,0 +1,21 @@
+import read_input
+
+inp = read_input.read_file("dummy.txt")
+
+left = []
+right = []
+
+for i in inp:
+    left.append(int(i.split(" ")[0]))
+    right.append(int(i.split(" ")[3]))
+
+print(left)
+print(right)
+left = sorted(left)
+right = sorted(right)
+
+diff = 0
+for i in range(len(left)):
+    diff += abs(left[i] - right[i])
+
+print(diff)

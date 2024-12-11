@@ -2,8 +2,7 @@
 (setq org-html-link-org-files-as-html nil)
 
 (custom-set-variables
- '(inhibit-startup-screen t)
- '(compilation-scroll-output t))
+ '(inhibit-startup-screen t))
 
 
 (setq backup-directory-alist

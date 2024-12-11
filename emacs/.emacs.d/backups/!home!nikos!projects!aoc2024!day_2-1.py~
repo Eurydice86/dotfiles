@@ -1,0 +1,5 @@
+import read_input
+
+inp = read_input.read_file("dummy.txt")
+
+print(inp)
