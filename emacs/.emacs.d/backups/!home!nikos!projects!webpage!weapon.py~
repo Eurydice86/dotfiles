@@ -1,0 +1,56 @@
+import upcoming_events
+import news
+
+
+def weapon_to_group(weapon):
+    conversion_table = {
+        "Bolognese Sidesword": "28121",
+        "Fiore": "49024",
+        "Gekiken": "38874",
+        "Messer": "48332",
+        "Wrestling": "28115",
+        "German Longsword": "28112",
+        "Sabre": "31363",
+        "Rapier": "28114",
+    }
+    return conversion_table[weapon]
+
+
+def weapon_to_tag(weapon):
+    conversion_table = {
+        "Bolognese Sidesword": "28121",
+        "Fiore": "49024",
+        "Gekiken": "38874",
+        "Messer": "48332",
+        "Wrestling": "28115",
+        "German Longsword": "pitkämiekka",
+        "Sabre": "31363",
+        "Rapier": "28114",
+    }
+    return conversion_table[weapon]
+
+
+def get_weapon_info(weapon):
+    group = weapon_to_group(weapon)
+    weapon_events = upcoming_events.upcoming_events(group=group, days=7)
+
+    tag = weapon_to_tag(weapon)
+    weapon_news = news.get_news(tag)
+    return weapon_events, weapon_news
+
+
+def print_weapon_info(weapon):
+    events, news = get_weapon_info(weapon)
+    events = sorted(events, key=lambda d: d["starts_at"])
+
+    for e in events:
+        print(e["name"], e["starts_at"])
+    print()
+    for n in news:
+        print(n["title"])
+    print()
+
+
+if __name__ == "__main__":
+    print_weapon_info("German Longsword")
+    print_weapon_info("Bolognese Sidesword")

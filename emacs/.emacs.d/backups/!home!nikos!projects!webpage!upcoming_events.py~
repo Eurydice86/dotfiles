@@ -1,0 +1,42 @@
+import groups
+import events_in_group
+import event
+
+import datetime
+import requests
+import json
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+
+def upcoming_events(group, days):
+    start = datetime.datetime.now().date()
+    end = start + datetime.timedelta(days=days)
+
+    myclub_token = os.getenv("MC_TOKEN")
+    headers = {"X-myClub-token": myclub_token}
+
+    base_url = "https://ehms.myclub.fi/api/"
+    event_url = "events/"
+    full_url = base_url + event_url
+
+    events_list = []
+
+    params = {"group_id": group, "start_date": start, "end_date": end}
+
+    response = requests.get(full_url, headers=headers, params=params)
+    print(response)
+    content = json.loads(response.content)
+
+    events = []
+    for c in content:
+        c = c.get("event")
+        events.append(c)
+
+    return events
+
+if __name__ == "__main__":
+    upcoming_events("28112", 14)

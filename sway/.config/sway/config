@@ -154,6 +154,7 @@ output DP-2 pos 1920 0 res 1920x1080@144.001Hz
     # Switch to workspace
     # 
     # 
+    for_window [workspace="9"] floating enable
 
     bindsym $mod+1 workspace number 1
     bindsym $mod+2 workspace number 2
