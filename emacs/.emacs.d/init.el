@@ -18,6 +18,12 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 
+(use-package mood-line
+  :config
+  (mood-line-mode)
+  :custom
+  (mood-line-glyph-alist mood-line-glyphs-unicode))
+
 (use-package nerd-icons-dired
   :hook
   (dired-mode . nerd-icons-dired-mode))
@@ -144,6 +150,11 @@
   :config
   (vertico-mode t))
 
+(use-package vertico-posframe
+  :ensure t
+  :config
+  (vertico-posframe-mode t))
+
 (use-package marginalia
   :ensure t
   :config
@@ -266,12 +277,12 @@
 
 ;;; postgresql
 
-;(unless (package-installed-p 'pg)
-;   (package-vc-install "https://github.com/emarsden/pg-el" nil nil 'pg))
-;(unless (package-installed-p 'pgmacs)
-;   (package-vc-install "https://github.com/emarsden/pgmacs"))
-;
-;(require 'pgmacs)
+(unless (package-installed-p 'pg)
+   (package-vc-install "https://github.com/emarsden/pg-el" nil nil 'pg))
+(unless (package-installed-p 'pgmacs)
+   (package-vc-install "https://github.com/emarsden/pgmacs"))
+
+(require 'pgmacs)
 
 
 

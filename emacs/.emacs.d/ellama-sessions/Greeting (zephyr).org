@@ -1,8 +1,0 @@
-** User:
-hello
-
-** Ellama:
-Hello, how may I assist you today? Please let me know what you're looking for and I'll do my best to
-provide the information or answer your question. Thank you!
-
-** User:

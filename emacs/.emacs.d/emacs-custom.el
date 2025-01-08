@@ -8,7 +8,7 @@
    '("159a29ab0ec5ba4e2811eddd9756aa779b23467723dcbdd223929fbf2dde8954" default))
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(nerd-icons-dired org-preview-html ellama pgmacs pg sqlite-mode-extras hardtime reformatter go-mode pyvenv venv python-ts-mode vertico spacious-padding projectile org-modern org-gcal org-appear orderless marginalia golden-ratio gdscript-mode f ef-themes denote dashboard consult company beacon))
+   '(vertico-posframe pgmacs pg mood-line nerd-icons-dired org-preview-html ellama sqlite-mode-extras hardtime reformatter go-mode pyvenv venv python-ts-mode vertico spacious-padding projectile org-modern org-gcal org-appear orderless marginalia golden-ratio gdscript-mode f ef-themes denote dashboard consult company beacon))
  '(package-vc-selected-packages
    '((pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")
      (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")
