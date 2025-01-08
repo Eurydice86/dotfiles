@@ -1,4 +1,4 @@
 emacs/.emacs.d/backups/*
 emacs/.emacs.d/auto-save-list/*
-emacs/ellama-sessions
+emacs/.emacs.d/ellama-sessions/*
 emacs/.emacs.d/elpa/*
