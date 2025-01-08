@@ -1,2 +1,3 @@
 emacs/.emacs.d/backups/*
 emacs/.emacs.d/auto-save-list/*
+emacs/ellama-sessions

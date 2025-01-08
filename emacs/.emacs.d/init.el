@@ -1,4 +1,3 @@
-
 (setq org-html-link-org-files-as-html nil)
 
 (custom-set-variables
@@ -17,6 +16,11 @@
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+
+
+(use-package nerd-icons-dired
+  :hook
+  (dired-mode . nerd-icons-dired-mode))
 
 (use-package golden-ratio
   :ensure t
@@ -76,7 +80,7 @@
   (setq dashboard-display-icons-p t) ;; display icons on both GUI and terminal
   (setq dashboard-set-heading-icons t)
   (setq dashboard-set-file-icons t)
-  (setq dashboard-icon-type 'all-the-icons) ;; use `nerd-icons' package
+  (setq dashboard-icon-type 'nerd-icons) ;; use `nerd-icons' package
 					;(setq dashboard-week-agenda t)
 					;(setq dashboard-agenda-sort-strategy '(time-up ts-up))
   (setq dashboard-items '((recents  . 5)
@@ -160,6 +164,11 @@
 (use-package org-modern
   :ensure t
   :hook (org-mode . global-org-modern-mode))
+
+(use-package org-preview-html
+  :ensure t)
+
+;(add-hook 'org-mode-hook 'org-preview-html-mode)
 
 ;;; elisp
 
@@ -255,7 +264,21 @@
 (add-hook 'csv-mode-hook 'csv-align-mode)
 
 
+;;; postgresql
+
+;(unless (package-installed-p 'pg)
+;   (package-vc-install "https://github.com/emarsden/pg-el" nil nil 'pg))
+;(unless (package-installed-p 'pgmacs)
+;   (package-vc-install "https://github.com/emarsden/pgmacs"))
+;
+;(require 'pgmacs)
+
 
 
 ;(add-hook 'sql-mode-hook 'lsp)
 ;(setq lsp-sqls-workspace-config-path nil)
+
+;; ellama 
+
+(use-package ellama
+  :ensure t)
