@@ -50,6 +50,10 @@
 
 ;;; 
 
+(use-package multiple-cursors
+  :ensure t)
+(global-set-key (kbd "C-x x") 'mc/mark-next-like-this)
+
 (use-package projectile
   :ensure t
   :config
@@ -87,14 +91,14 @@
   (setq dashboard-set-heading-icons t)
   (setq dashboard-set-file-icons t)
   (setq dashboard-icon-type 'nerd-icons) ;; use `nerd-icons' package
-					;(setq dashboard-week-agenda t)
-					;(setq dashboard-agenda-sort-strategy '(time-up ts-up))
+  ;(setq dashboard-week-agenda t)
+  ;(setq dashboard-agenda-sort-strategy '(time-up ts-up))
   (setq dashboard-items '((recents  . 5)
 					;(bookmarks . 5)
-                        (projects . 5)
-					;(agenda . 15)
+                          (projects . 5)
+			  ;(agenda . 15)
 					;(registers . 5)
-			))
+			  ))
   (setq dashboard-set-navigator t)
   (setq dashboard-set-footer nil)
   (setq dashboard-projects-backend 'projectile)
@@ -292,4 +296,12 @@
 ;; ellama 
 
 (use-package ellama
-  :ensure t)
+  :ensure t
+  :init
+  (require 'llm-ollama)
+  (setopt ellama-provider
+  	  (make-llm-ollama
+  	   ;; this model should be pulled to use it
+  	   ;; value should be the same as you print in terminal during pull
+  	   :chat-model "deepseek-r1"))
+  )
