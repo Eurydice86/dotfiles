@@ -4,9 +4,11 @@
 (setq mc/cmds-to-run-for-all
       '(
 	keyboard-escape-quit
+	mc/mark-next-lines
 	multiple-cursors-mode
 	))
 
 (setq mc/cmds-to-run-once
       '(
+	compile
 	))

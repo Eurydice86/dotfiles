@@ -224,16 +224,6 @@
   (setenv "PATH" (concat (getenv "PATH") ":/home/nikos/.cargo/bin")))
 
 
-;;; Godot
-(use-package gdscript-mode
-  :ensure t
-  :hook ((gdscipt-mode . eglot-ensure)
-	 (gdscript-mode . company-mode)
-	 add-to-list 'company-backends 'company-godot-gdscript)
-  :custom (gdscript-eglot)
-  :mode (("\\.gd\\'". gdscript-mode)))
-
-
 ;;; C and C++
 ;; (add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))
 ;; (add-to-list 'major-mode-remap-alist '(c++-mode . c++-ts-mode))
@@ -303,5 +293,5 @@
   	  (make-llm-ollama
   	   ;; this model should be pulled to use it
   	   ;; value should be the same as you print in terminal during pull
-  	   :chat-model "deepseek-r1"))
+  	   :chat-model "zephyr"))
   )

@@ -1,1 +1,1 @@
-("~/projects/ehms_mc_api/" "~/dotfiles/" "~/projects/webpage/" "~/projects/rusty/" "~/projects/hlo_stats/" "~/projects/ehms/" "~/projects/akis/" "~/projects/the_scintilla/" "~/projects/ehms_discord_bot/" "~/projects/aco_billiards/" "~/projects/file_explorer/")
+("~/dotfiles/" "~/projects/ehms_mc_api/" "~/projects/webpage/" "~/projects/rusty/" "~/projects/hlo_stats/" "~/projects/ehms/" "~/projects/akis/" "~/projects/the_scintilla/" "~/projects/ehms_discord_bot/" "~/projects/aco_billiards/" "~/projects/file_explorer/")
