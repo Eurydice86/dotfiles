@@ -34,6 +34,6 @@ stow -Svt ~ cava
 
 paru -S cava
 paru -S waylogout-git
-paru -S google-chrome
+paru -S brave-bin
 
 reboot

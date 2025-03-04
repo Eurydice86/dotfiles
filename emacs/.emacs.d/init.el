@@ -61,13 +61,6 @@
   (projectile-mode t))
 
 
-(use-package company
-  :ensure t
-  :config
-  (setq company-idle-delay 0.0
-        company-minimum-prefix-length 1))
-
-
 (setq plstore-cache-passphrase-for-symmetric-encryption t)
 
 (use-package hardtime
@@ -189,7 +182,7 @@
 
 (use-package emacs-lisp-mode
 ;  :ensure t
-  :hook ((emacs-lisp-mode . company-mode)))
+  :hook ((emacs-lisp-mode . completion-preview-mode)))
 
 ;;; Python
 
@@ -206,7 +199,7 @@
 (use-package python
   :ensure t
   :hook ((python-ts-mode . eglot-ensure)
-	 (python-ts-mode . company-mode)
+	 (python-ts-mode . completion-preview-mode)
 	 (python-ts-mode . pyvenv-autoload))
   :mode (("\\.py\\'" . python-ts-mode)))
 
@@ -217,7 +210,7 @@
 (use-package rust-ts-mode
   :ensure t
   :hook ((rust-ts-mode . eglot-ensure)
-	 (rust-ts-mode . company-mode))
+	 (rust-ts-mode . completion-preview-mode))
   :mode (("\\.rs\\'" . rust-ts-mode))
   :config
   (add-to-list 'exec-path "/home/nikos/.cargo/bin")
@@ -235,7 +228,7 @@
 (use-package lsp-mode
   ;:ensure t
   :hook ((c++-ts-mode . eglot-ensure)
-	 ( c++-ts-mode . company-mode))
+	 ( c++-ts-mode . completion-preview-mode))
   :mode (("\\.cpp\\'". c++-ts-mode)))
 
 ;;; Go
@@ -243,7 +236,7 @@
 (use-package go-ts-mode
   :ensure t
   :hook ((go-ts-mode . eglot-ensure)
-	 (go-ts-mode . company-mode))
+	 (go-ts-mode . completion-preview-mode))
   :mode "\\.go\\'"
   )
 
