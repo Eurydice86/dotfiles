@@ -19,6 +19,7 @@
 
 
 (use-package mood-line
+  :ensure t
   :config
   (mood-line-mode)
   :custom
@@ -195,8 +196,9 @@
                             (cl-return-from pyvenv-autoload))))))
 
 
-
 (use-package python
+  :ensure-system-package
+  ()
   :ensure t
   :hook ((python-ts-mode . eglot-ensure)
 	 (python-ts-mode . completion-preview-mode)
@@ -271,6 +273,7 @@
 
 (require 'pgmacs)
 
+(setopt treesit-font-lock-level 3)
 
 
 ;(add-hook 'sql-mode-hook 'lsp)
