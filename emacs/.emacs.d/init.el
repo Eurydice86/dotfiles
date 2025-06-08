@@ -62,6 +62,8 @@
   (projectile-mode t))
 
 
+(add-to-list 'projectile-globally-ignored-directories ".venv")
+
 (setq plstore-cache-passphrase-for-symmetric-encryption t)
 
 (use-package hardtime

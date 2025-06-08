@@ -1,1 +1,1 @@
-("~/dotfiles/" "~/projects/hemaratings_scrape/" "~/projects/ehms_mc_api/" "~/projects/file_explorer/")
+("~/dotfiles/" "~/projects/FinProd/finprodai-mvp/" "~/projects/FinProd/poc/" "~/projects/webpage/" "~/projects/ehms_mc_api/" "~/projects/hemaratings_stats/" "~/projects/hemaratings_scrape/" "~/projects/file_explorer/")
