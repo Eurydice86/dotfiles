@@ -18,6 +18,9 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
 
+(use-package magit
+  :ensure t)
+
 (use-package mood-line
   :ensure t
   :config
@@ -196,6 +199,12 @@
                           (when (f-exists? venv-path)
                             (pyvenv-activate venv-path)
                             (cl-return-from pyvenv-autoload))))))
+
+(use-package highlight-indent-guides
+  :ensure t
+  :hook (python-ts-mode . highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-method 'character))
 
 
 (use-package python
