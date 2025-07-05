@@ -1,1 +1,1 @@
-("~/dotfiles/" "~/projects/FinProd/poc/" "~/projects/FinProd/finprodai-mvp/" "~/projects/webpage/" "~/projects/ehms_mc_api/" "~/projects/hemaratings_stats/" "~/projects/hemaratings_scrape/" "~/projects/file_explorer/")
+("~/dotfiles/" "~/projects/FinProd/finprodai-backend/" "~/projects/FinProd/finprodai-mvp/" "~/projects/webpage/" "~/projects/FinProd/poc/" "~/projects/ehms_mc_api/" "~/projects/hemaratings_stats/" "~/projects/hemaratings_scrape/" "~/projects/file_explorer/")
