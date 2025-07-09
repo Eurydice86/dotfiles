@@ -192,6 +192,9 @@
 
 ;;; Python
 
+(use-package pyvenv
+  :ensure t)
+
 (cl-defun pyvenv-autoload ()
   "auto activate venv directory if exists"
   (f-traverse-upwards (lambda (path)
