@@ -52,11 +52,18 @@
 (keymap-global-set "<f5>" 'compile)
 (keymap-global-set "<f6>" 'eglot-format)
 
-;;; 
+;;; hideshow
+(global-set-key (kbd "C-<tab>") 'hs-toggle-hiding)
+(global-set-key (kbd "C-M-<tab>") 'hs-hide-all)
+(global-set-key (kbd "C-M-<iso-lefttab>") 'hs-show-all)
+
+;;; multiple cursors
 
 (use-package multiple-cursors
   :ensure t)
+
 (global-set-key (kbd "C-x x") 'mc/mark-next-like-this)
+
 
 (use-package projectile
   :ensure t
@@ -205,7 +212,7 @@
 
 (use-package highlight-indent-guides
   :ensure t
-  :hook (python-ts-mode . highlight-indent-guides-mode)
+  :hook ((python-ts-mode . highlight-indent-guides-mode))
   :config
   (setq highlight-indent-guides-method 'character))
 
@@ -216,7 +223,8 @@
   :ensure t
   :hook ((python-ts-mode . eglot-ensure)
 	 (python-ts-mode . completion-preview-mode)
-	 (python-ts-mode . pyvenv-autoload))
+	 (python-ts-mode . pyvenv-autoload)
+	 (python-ts-mode . hs-minor-mode))
   :mode (("\\.py\\'" . python-ts-mode)))
 
 
