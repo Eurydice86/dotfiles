@@ -32,6 +32,9 @@ stow -Svt ~ wallpapers
 stow -Svt ~ emacs
 
 paru -S waylogout-git
-paru -S brave-bin
+paru -S google-chrome
+paru -S discord-ptb
+paru -S outlook-for-linux-bin
+paru -S teams-for-linux-bin
 
 reboot
