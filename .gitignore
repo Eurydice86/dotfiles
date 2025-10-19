@@ -2,4 +2,4 @@ emacs/.emacs.d/backups/*
 emacs/.emacs.d/auto-save-list/
 emacs/.emacs.d/ellama-sessions/
 emacs/.emacs.d/elpa/
-emacs/.emacs/eln-cache/
+emacs/.emacs/eln-cache
