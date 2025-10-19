@@ -61,7 +61,6 @@
 
 (use-package multiple-cursors
   :ensure t)
-
 (global-set-key (kbd "C-x x") 'mc/mark-next-like-this)
 
 
@@ -301,15 +300,3 @@
 ;(add-hook 'sql-mode-hook 'lsp)
 ;(setq lsp-sqls-workspace-config-path nil)
 
-;; ellama 
-
-(use-package ellama
-  :ensure t
-  :init
-  (require 'llm-ollama)
-  (setopt ellama-provider
-  	  (make-llm-ollama
-  	   ;; this model should be pulled to use it
-  	   ;; value should be the same as you print in terminal during pull
-  	   :chat-model "zephyr"))
-  )
