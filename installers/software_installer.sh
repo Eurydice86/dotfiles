@@ -37,4 +37,6 @@ paru -S discord-ptb
 paru -S outlook-for-linux-bin
 paru -S teams-for-linux-bin
 
+sudo systemctl enable bluetooth.service
+
 reboot
