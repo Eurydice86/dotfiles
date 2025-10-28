@@ -300,3 +300,5 @@
 ;(add-hook 'sql-mode-hook 'lsp)
 ;(setq lsp-sqls-workspace-config-path nil)
 
+; markdown
+(setq markdown-command "pandoc")
