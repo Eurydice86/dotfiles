@@ -17,7 +17,6 @@
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-
 (use-package magit
   :ensure t)
 
@@ -266,6 +265,12 @@
 
 ;;; csv
 
+(use-package csv-mode
+  :ensure t
+  :mode "\\.csv\\'"
+  :hook ((csv-mode . csv-highlight)
+	 (csv-mode . csv-align-mode))
+  )
 (require 'color)
 
 (defun csv-highlight (&optional separator)
@@ -276,14 +281,10 @@
          (colors (cl-loop for i from 0 to 1.0 by (/ 2.0 n)
                        collect (apply #'color-rgb-to-hex 
                                       (color-hsl-to-rgb i 0.3 0.5)))))
-    (cl-loop for i from 2 to n by 2 
+   (cl-loop for i from 2 to n by 2 
           for c in colors
           for r = (format "^\\([^%c\n]+%c\\)\\{%d\\}" separator separator i)
           do (font-lock-add-keywords nil `((,r (1 '(face (:foreground ,c)))))))))
-
-(add-hook 'csv-mode-hook 'csv-highlight)
-(add-hook 'csv-mode-hook 'csv-align-mode)
-
 
 ;;; postgresql
 

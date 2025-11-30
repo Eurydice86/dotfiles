@@ -10,15 +10,11 @@
      default))
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(aidermacs beacon company consult dashboard denote ef-themes eglot
-	       ellama emacs-lisp-mode f gdscript-mode go-mode
-	       golden-ratio hardtime highlight-indent-guides magit
-	       marginalia markdown-mode mood-line multiple-cursors
-	       neotree nerd-icons-dired oauth2 orderless org-appear
-	       org-modern org-preview-html pg pgmacs projectile
-	       python-ts-mode pyvenv reformatter spacious-padding
-	       sqlite-mode-extras venv vertico vertico-posframe
-	       yaml-mode))
+   '(aidermacs beacon consult csv-mode dashboard denote ef-themes ellama
+	       f golden-ratio hardtime highlight-indent-guides magit
+	       marginalia mood-line orderless org-appear org-modern
+	       org-preview-html pgmacs projectile pyvenv reformatter
+	       spacious-padding symbol-overlay-mc vertico-posframe))
  '(package-vc-selected-packages
    '((pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")
      (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")
