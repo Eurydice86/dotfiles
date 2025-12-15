@@ -8,10 +8,10 @@ git config --global init.defaultBranch main
 git config --global user.name Eurydice86
 git config --global user.email kyriakopoulos.nikos@gmail.com
 
-git clone https://aur.archlinux.org/paru.git
-cd paru
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+sudo pacman -S base-devel
 makepkg -si
-paru
 
 sudo pacman -S wofi pacman-contrib waybar eza zsh atuin thunar btop stow ttf-iosevka-nerd noto-fonts-emoji ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono noto-fonts pulseaudioppulseaudio-alsa pulseaudio-bluetooth bluez-utils emacs python-lsp-server python-flake8 python-lsp-black python-isort rust-analyzer cmake wl-clipboard clang zoxide vlc vlc-plugin-ffmpeg blueman thefuck go gopls less --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr pandoc
 

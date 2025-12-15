@@ -32,7 +32,16 @@ eval "$(thefuck --alias)"
 export EDITOR=emacs
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/nikos/projects/ehms_mc_api/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nikos/projects/ehms_mc_api/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/home/nikos/google-cloud-sdk/path.zsh.inc' ]; then . '/home/nikos/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/nikos/projects/ehms_mc_api/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nikos/projects/ehms_mc_api/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/home/nikos/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/nikos/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pyenv initialization
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Superset configuration
+export FLASK_APP=superset
+export SUPERSET_CONFIG_PATH=/home/nikos/projects/superset/superset_config.py
