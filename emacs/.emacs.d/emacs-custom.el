@@ -10,12 +10,12 @@
      default))
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(aidermacs beacon consult csv-mode dashboard denote ef-themes ellama
-	       f golden-ratio hardtime highlight-indent-guides magit
-	       marginalia mood-line orderless org-appear org-modern
-	       org-preview-html pgmacs projectile pyvenv reformatter
-	       spacious-padding symbol-overlay-mc vertico-posframe
-	       yaml-mode))
+   '(aidermacs beacon consult csv-mode dap-mode dashboard denote
+	       ef-themes ellama golden-ratio hardtime
+	       highlight-indent-guides magit marginalia mood-line
+	       orderless org-appear org-modern org-preview-html pgmacs
+	       projectile pyvenv realgud reformatter spacious-padding
+	       symbol-overlay-mc vertico-posframe yaml-mode))
  '(package-vc-selected-packages
    '((pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")
      (pg :vc-backend Git :url "https://github.com/emarsden/pg-el")

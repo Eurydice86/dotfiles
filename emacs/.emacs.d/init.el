@@ -225,7 +225,8 @@
 	 (python-ts-mode . hs-minor-mode))
   :mode (("\\.py\\'" . python-ts-mode)))
 
-
+  (use-package realgud
+    :ensure t)
 
 ;;; Rust
 

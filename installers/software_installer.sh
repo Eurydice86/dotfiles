@@ -13,7 +13,7 @@ cd yay-bin
 sudo pacman -S base-devel
 makepkg -si
 
-sudo pacman -S wofi pacman-contrib waybar eza zsh atuin thunar btop stow ttf-iosevka-nerd noto-fonts-emoji ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono noto-fonts pulseaudioppulseaudio-alsa pulseaudio-bluetooth bluez-utils emacs python-lsp-server python-flake8 python-lsp-black python-isort rust-analyzer cmake wl-clipboard clang zoxide vlc vlc-plugin-ffmpeg blueman thefuck go gopls less --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr pandoc bat
+sudo pacman -S wofi pacman-contrib waybar eza zsh atuin thunar btop stow ttf-iosevka-nerd noto-fonts-emoji ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono noto-fonts pulseaudioppulseaudio-alsa pulseaudio-bluetooth bluez-utils emacs python-lsp-server python-flake8 python-lsp-black python-isort python-debugpy rust-analyzer cmake wl-clipboard clang zoxide vlc vlc-plugin-ffmpeg blueman thefuck go gopls less --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr pandoc bat
 
 chsh -s $(which zsh) $USER
 
