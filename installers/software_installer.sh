@@ -31,11 +31,12 @@ stow -Svt ~ zsh
 stow -Svt ~ wallpapers
 stow -Svt ~ emacs
 
-paru -S waylogout-git
-paru -S google-chrome
-paru -S discord-ptb
-paru -S outlook-for-linux-bin
-paru -S teams-for-linux-bin
+yay -S waylogout-git
+yay -S google-chrome
+yay -S discord-ptb
+yay -S outlook-for-linux-bin
+yay -S teams-for-linux-bin
+yay pyenv
 
 sudo systemctl enable bluetooth.service
 
