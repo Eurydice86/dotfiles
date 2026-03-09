@@ -4,6 +4,7 @@
 (setq mc/cmds-to-run-for-all
       '(
 	keyboard-escape-quit
+	markdown-outdent-or-delete
 	multiple-cursors-mode
 	))
 

@@ -304,3 +304,9 @@
 
 ; markdown
 (setq markdown-command "pandoc")
+
+(setq org-latex-compiler "pdflatex")
+
+(setq org-latex-pdf-process
+      '("pdflatex -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -interaction nonstopmode -output-directory %o %f"))
