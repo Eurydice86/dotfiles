@@ -120,6 +120,7 @@
 (add-hook 'text-mode-hook 'visual-line-mode)
 
 (global-display-line-numbers-mode)
+(global-auto-revert-mode)
 (global-tab-line-mode)
 ;(setq display-line-numbers-type 'relative)
 
@@ -296,7 +297,44 @@
 
 (require 'pgmacs)
 
+(use-package treesit
+  :commands (treesit-install-language-grammar nf/treesit-install-all-languages)
+  :init
+  (setq treesit-language-source-alist
+   '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
+     (c . ("https://github.com/tree-sitter/tree-sitter-c"))
+     (cpp . ("https://github.com/tree-sitter/tree-sitter-cpp"))
+     (css . ("https://github.com/tree-sitter/tree-sitter-css"))
+     (cmake . ("https://github.com/uyha/tree-sitter-cmake"))
+     (go . ("https://github.com/tree-sitter/tree-sitter-go"))
+     (html . ("https://github.com/tree-sitter/tree-sitter-html"))
+     (javascript . ("https://github.com/tree-sitter/tree-sitter-javascript"))
+     (json . ("https://github.com/tree-sitter/tree-sitter-json"))
+     (julia . ("https://github.com/tree-sitter/tree-sitter-julia"))
+     (lua . ("https://github.com/Azganoth/tree-sitter-lua"))
+     (make . ("https://github.com/alemuller/tree-sitter-make"))
+     (ocaml . ("https://github.com/tree-sitter/tree-sitter-ocaml" "master" "ocaml/src"))
+     (python . ("https://github.com/tree-sitter/tree-sitter-python"))
+     (php . ("https://github.com/tree-sitter/tree-sitter-php"))
+     (typescript . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src"))
+     (tsx . ("https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src"))
+     (ruby . ("https://github.com/tree-sitter/tree-sitter-ruby"))
+     (rust . ("https://github.com/tree-sitter/tree-sitter-rust"))
+     (sql . ("https://github.com/m-novikov/tree-sitter-sql"))
+     (toml . ("https://github.com/tree-sitter/tree-sitter-toml"))
+     (yaml . ("https://github.com/ikatyang/tree-sitter-yaml"))
+     (zig . ("https://github.com/GrayJack/tree-sitter-zig"))))
+  :config
+  (defun nf/treesit-install-all-languages ()
+    "Install all languages specified by `treesit-language-source-alist'."
+    (interactive)
+    (let ((languages (mapcar 'car treesit-language-source-alist)))
+      (dolist (lang languages)
+	      (treesit-install-language-grammar lang)
+	      (message "`%s' parser was installed." lang)
+	      (sit-for 0.75)))))
 (setopt treesit-font-lock-level 3)
+
 
 
 ;(add-hook 'sql-mode-hook 'lsp)
@@ -310,3 +348,42 @@
 (setq org-latex-pdf-process
       '("pdflatex -interaction nonstopmode -output-directory %o %f"
         "pdflatex -interaction nonstopmode -output-directory %o %f"))
+         
+;; if you use treesitter based typescript-ts-mode (emacs 29+)
+(use-package tide
+  :ensure t
+  :after (company flycheck)
+  :hook ((typescript-ts-mode . tide-setup)
+         (tsx-ts-mode . tide-setup)
+         (typescript-ts-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save))
+  :mode (("\\.tsx\\'" . typescript-ts-mode)))
+
+
+(use-package org-novelist
+  :vc (:url "https://github.com/sympodius/org-novelist.git"
+       :rev :newest)  ; Use the latest commit, rather than the latest release. For latest release, remove ":rev :newest"
+  :custom
+    (org-novelist-author "John Urquhart Ferguson")  ; The default author name to use when exporting a story. Each story can also override this setting
+    (org-novelist-author-email "mail@johnurquhartferguson.info")  ; The default author contact email to use when exporting a story. Each story can also override this setting
+    (org-novelist-automatic-referencing-p nil)  ; Set this variable to 't' if you want Org Novelist to always keep note links up to date. This may slow down some systems when operating on complex stories. It defaults to 'nil' when not set
+  :bind (("C-c n n s" . org-novelist-new-story)
+          :map org-novelist-mode-map
+          ("C-c n n c" . org-novelist-new-chapter)
+          ("C-c n d c" . org-novelist-destroy-chapter)
+          ("C-c n r c" . org-novelist-rename-chapter)
+          ("C-c n n a" . org-novelist-new-character)
+          ("C-c n d a" . org-novelist-destroy-character)
+          ("C-c n r a" . org-novelist-rename-character)
+          ("C-c n n p" . org-novelist-new-prop)
+          ("C-c n d p" . org-novelist-destroy-prop)
+          ("C-c n r p" . org-novelist-rename-prop)
+          ("C-c n n l" . org-novelist-new-place)
+          ("C-c n d l" . org-novelist-destroy-place)
+          ("C-c n r l" . org-novelist-rename-place)
+          ("C-c n u"   . org-novelist-update-references)
+          ("C-c n r s" . org-novelist-rename-story)
+          ("C-c n e"   . org-novelist-export-story)
+          ("C-c n l l" . org-novelist-link-to-story)
+          ("C-c n l u" . org-novelist-unlink-from-story)
+          ("C-c n t"   . org-novelist-toggle-automatic-referencing)))

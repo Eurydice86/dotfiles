@@ -1,5 +1,7 @@
 ;;; -*- lisp-data -*-
-(("/home/nikos/projects/dbt/") ("/home/nikos/dotfiles/")
+(("/home/nikos/dotfiles/")
+ ("/home/nikos/dotfiles/emacs/.emacs.d/elpa/org-novelist/")
+ ("/home/nikos/projects/dbt/")
  ("/home/nikos/dotfiles/emacs/.emacs.d/elpa/pgmacs/")
  ("/home/nikos/dotfiles/emacs/.emacs.d/elpa/pg/")
  ("/home/nikos/dotfiles/emacs/.emacs.d/elpa/hardtime/"))

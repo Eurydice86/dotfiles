@@ -46,3 +46,4 @@ eval "$(pyenv init -)"
 export FLASK_APP=superset
 export SUPERSET_CONFIG_PATH=/home/nikos/projects/superset/superset_config.py
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
