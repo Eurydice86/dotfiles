@@ -34,8 +34,8 @@
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
-            "unlocked": ""
-        }
+            "unlocked": "" 
+       }
     },
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
@@ -97,12 +97,18 @@
     	"on-click": "blueman-manager"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}% ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+	"interval": 1
     },
+    "disk": {
+        "format": "{}% 󰋊",
+	"interval": 1
+    },
+
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
