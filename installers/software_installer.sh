@@ -38,6 +38,14 @@ yay -S outlook-for-linux-bin
 yay -S teams-for-linux-bin
 yay pyenv
 
+# Copy custom systemd services
+sudo cp -v systemd/system/*.service /etc/systemd/system/
+sudo systemctl daemon-reload
+
+# Enable systemd services
 sudo systemctl enable bluetooth.service
+sudo systemctl enable iwd.service
+sudo systemctl enable ollama.service
+sudo systemctl enable kbd-backlight.service
 
 reboot

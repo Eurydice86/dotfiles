@@ -1,0 +1,11 @@
+[Unit]
+Description=Enable keyboard backlight
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo 1 | tee /sys/class/leds/platform::kbd_backlight/brightness"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
