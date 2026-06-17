@@ -275,6 +275,13 @@
   )
 (require 'color)
 
+;;; Bash
+
+(use-package bash-ts-mode
+  :mode "\\.env\\'"
+  )
+
+
 (defun csv-highlight (&optional separator)
   (interactive (list (when current-prefix-arg (read-char "Separator: "))))
   (font-lock-mode 1)
