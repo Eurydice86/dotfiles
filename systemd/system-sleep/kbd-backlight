@@ -1,0 +1,7 @@
+#!/bin/sh
+# Re-enable keyboard backlight after resume; kbd-backlight.service only runs at boot.
+case "$1" in
+    post)
+        echo 1 > /sys/class/leds/platform::kbd_backlight/brightness
+        ;;
+esac

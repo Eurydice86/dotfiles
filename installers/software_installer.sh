@@ -43,6 +43,10 @@ yay pyenv
 sudo cp -v systemd/system/*.service /etc/systemd/system/
 sudo systemctl daemon-reload
 
+# Copy custom systemd sleep hooks (e.g. restore keyboard backlight after resume)
+sudo cp -v systemd/system-sleep/* /etc/systemd/system-sleep/
+sudo chmod +x /etc/systemd/system-sleep/*
+
 # Enable systemd services
 sudo systemctl enable bluetooth.service
 sudo systemctl enable iwd.service
