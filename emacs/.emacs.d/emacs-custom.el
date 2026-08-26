@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -9,7 +10,14 @@
      "159a29ab0ec5ba4e2811eddd9756aa779b23467723dcbdd223929fbf2dde8954"
      default))
  '(inhibit-startup-screen t)
- '(package-selected-packages nil)
+ '(package-selected-packages
+   '(aidermacs beacon consult csv-mode dap-mode dashboard denote
+	       ef-themes ellama emacs-lisp-mode golden-ratio hardtime
+	       highlight-indent-guides magit marginalia mood-line
+	       orderless org-appear org-modern org-novelist
+	       org-preview-html pgmacs projectile pyvenv realgud
+	       reformatter spacious-padding symbol-overlay-mc tide
+	       vertico-posframe yaml-mode))
  '(package-vc-selected-packages
    '((org-novelist :url "https://github.com/sympodius/org-novelist.git")
      (pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")

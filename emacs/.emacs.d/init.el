@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 (setq org-html-link-org-files-as-html nil)
 
 (custom-set-variables
@@ -190,11 +191,12 @@
 
 ;(add-hook 'org-mode-hook 'org-preview-html-mode)
 
-;;; elisp
+;; ;;; elisp
 
-(use-package emacs-lisp-mode
-;  :ensure t
-  :hook ((emacs-lisp-mode . completion-preview-mode)))
+;; (use-package emacs-lisp-mode
+;;   :ensure t
+;;   :init
+;;   :hook ((emacs-lisp-mode . completion-preview-mode)))
 
 ;;; Python
 
@@ -307,6 +309,8 @@
 (use-package treesit
   :commands (treesit-install-language-grammar nf/treesit-install-all-languages)
   :init
+  (setq treesit-auto-install-grammar 'always)
+  (setq treesit-enabled-modes t)
   (setq treesit-language-source-alist
    '((bash . ("https://github.com/tree-sitter/tree-sitter-bash"))
      (c . ("https://github.com/tree-sitter/tree-sitter-c"))
