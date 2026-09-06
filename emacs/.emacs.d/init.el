@@ -191,12 +191,6 @@
 
 ;(add-hook 'org-mode-hook 'org-preview-html-mode)
 
-;; ;;; elisp
-
-;; (use-package emacs-lisp-mode
-;;   :ensure t
-;;   :init
-;;   :hook ((emacs-lisp-mode . completion-preview-mode)))
 
 ;;; Python
 
@@ -228,8 +222,6 @@
 	 (python-ts-mode . hs-minor-mode))
   :mode (("\\.py\\'" . python-ts-mode)))
 
-  (use-package realgud
-    :ensure t)
 
 ;;; Rust
 

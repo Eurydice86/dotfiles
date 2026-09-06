@@ -25,9 +25,22 @@ bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
 
+# Ctrl+Backspace - delete word backward
+bindkey '^H' backward-kill-word
+
+# Ctrl+Delete - delete word forward
+bindkey '^[[3;5~' kill-word
+
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
 eval "$(thefuck --alias)"
+
+
+# Home - go to beginning of line
+bindkey '^[[H' beginning-of-line
+
+# End - go to end of line
+bindkey '^[[F' end-of-line
 
 export EDITOR=emacs
 
