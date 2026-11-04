@@ -23,8 +23,8 @@ for_window [class=".*"] opacity $opacity
 for_window [app_id=".*"] opacity $opacity
 
 # execute on startup
-exec paccache -rk1
-exec mount /dev/sda1 /mnt/hdd
+# exec paccache -rk1
+# exec mount /dev/sda1 /mnt/hdd
 
 
 ### Variables
@@ -94,6 +94,9 @@ output $output-secondary pos 1920 0 res 1920x1080
     bindsym $mod+Return exec $term --title Terminal
     # Start emacs
     bindsym $mod+e exec emacs
+    # Start Chrome
+    bindsym $mod+g exec google-chrome-stable
+    
     # Screen snip
     bindsym Ctrl+Alt+p exec slurp | grim -g - - | wl-copy
     # Volume control
