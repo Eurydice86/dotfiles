@@ -32,6 +32,7 @@ stow -Svt ~ wallpapers
 stow -Svt ~ emacs
 stow -Svt ~ chrome
 stow -Svt ~ wireplumber
+stow -Svt ~ pipewire
 
 yay -S waylogout-git
 yay -S google-chrome
