@@ -31,6 +31,7 @@ stow -Svt ~ zsh
 stow -Svt ~ wallpapers
 stow -Svt ~ emacs
 stow -Svt ~ chrome
+stow -Svt ~ wireplumber
 
 yay -S waylogout-git
 yay -S google-chrome
