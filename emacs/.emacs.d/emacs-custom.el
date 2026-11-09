@@ -14,10 +14,10 @@
    '(aidermacs beacon consult csv-mode dap-mode dashboard denote
 	       ef-themes ellama emacs-lisp-mode golden-ratio hardtime
 	       highlight-indent-guides magit marginalia mood-line
-	       orderless org-appear org-modern org-novelist
-	       org-preview-html pgmacs projectile pyvenv realgud
-	       reformatter spacious-padding symbol-overlay-mc tide
-	       vertico-posframe yaml-mode))
+	       nerd-icons-dired orderless org-appear org-modern
+	       org-novelist org-preview-html pgmacs projectile pyvenv
+	       realgud reformatter spacious-padding symbol-overlay-mc
+	       tide vertico-posframe yaml-mode))
  '(package-vc-selected-packages
    '((org-novelist :url "https://github.com/sympodius/org-novelist.git")
      (pgmacs :vc-backend Git :url "https://github.com/emarsden/pgmacs")

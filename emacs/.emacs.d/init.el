@@ -29,6 +29,7 @@
   (mood-line-glyph-alist mood-line-glyphs-unicode))
 
 (use-package nerd-icons-dired
+  :ensure t
   :hook
   (dired-mode . nerd-icons-dired-mode))
 

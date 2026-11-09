@@ -13,7 +13,7 @@ cd yay-bin
 sudo pacman -S base-devel
 makepkg -si
 
-sudo pacman -S wofi pacman-contrib waybar eza zsh atuin thunar btop stow ttf-iosevka-nerd noto-fonts-emoji ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono noto-fonts pulseaudioppulseaudio-alsa pulseaudio-bluetooth bluez-utils emacs python-lsp-server python-flake8 python-lsp-black python-isort python-debugpy rust-analyzer cmake wl-clipboard clang zoxide vlc vlc-plugin-ffmpeg blueman thefuck go gopls less --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr pandoc bat texlive-meta
+sudo pacman -S wofi pacman-contrib waybar eza zsh atuin thunar btop stow ttf-iosevka-nerd noto-fonts-emoji ttf-nerd-fonts-symbols-common ttf-nerd-fonts-symbols-mono noto-fonts pipewire pipewire-audio pipewire-pulse pipewire-alsa pipewire-jack wireplumber bluez-utils emacs python-lsp-server python-flake8 python-lsp-black python-isort python-debugpy rust-analyzer cmake wl-clipboard clang zoxide vlc vlc-plugin-ffmpeg blueman thefuck go gopls less --noconfirm xdg-desktop-portal xdg-desktop-portal-wlr pandoc bat texlive-meta
 
 chsh -s $(which zsh) $USER
 
@@ -52,5 +52,8 @@ sudo systemctl enable bluetooth.service
 sudo systemctl enable iwd.service
 sudo systemctl enable ollama.service
 sudo systemctl enable kbd-backlight.service
+
+# Audio: PipeWire (user services)
+systemctl --user enable pipewire.socket pipewire-pulse.socket wireplumber.service
 
 reboot
